@@ -1,4 +1,5 @@
 import { useState } from 'react';
+export default function Bookshelf(){
 
 const [books, setBooks] = useState([
   { title: 'Fourth Wing', author: 'Rebecca Yarros' },
@@ -11,7 +12,7 @@ const [newBook, setNewBook] = useState({
 });
 
 const handleInputChange = (event) => {
-  setNewBooks({...newBook, [event.target.name]: event.target.value})
+  setNewBook({...newBook, [event.target.name]: event.target.value})
 }
 
 
@@ -23,4 +24,6 @@ const handleInputChange = (event) => {
   </div>
   <div className="bookCardsDiv">{/* Book cards will display here */}</div>
 </div>
-)
+
+
+}
