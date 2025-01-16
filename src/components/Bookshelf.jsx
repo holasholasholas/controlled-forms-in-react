@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function Bookshelf() {
+
   const [books, setBooks] = useState([
     { title: "Fourth Wing", author: "Rebecca Yarros" },
     { title: "The Lion, the Witch and the Wardrobe", author: "C.S. Lewis" },
@@ -37,8 +38,7 @@ export default function Bookshelf() {
               id="title"
               name="title"
               value={newBook.title}
-              onChange={handleInputChange}
-            ></input>
+              onChange={handleInputChange} />
           </div>
           <div className="author">
             <label htmlFor="author">Author:</label>
@@ -46,19 +46,18 @@ export default function Bookshelf() {
               id="author"
               name="author"
               value={newBook.author}
-              onChange={handleInputChange}
-            ></input>
+              onChange={handleInputChange} />
             <button onClick={handleSubmit}>Submit</button>
           </div>
         </form>
       </div>
       <div className="bookCardsDiv">
-        {books.map((book) => {
+        {books.map((book) => (
           <div className="bookCard" key={book.title}>
             <h2>Book Title: {book.title}</h2>
             <h2>Author: {book.author}</h2>
-          </div>;
-        })}
+          </div>
+      ))}
       </div>
     </div>
   );
